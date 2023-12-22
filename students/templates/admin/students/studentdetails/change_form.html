@@ -1,0 +1,25 @@
+{% extends "admin/change_form.html" %}
+{% block admin_change_form_document_ready %}
+    <div>
+        <h2>Records</h2>
+        <table border="2" style="border-color: #ccc; width:50%">
+            <thead>
+                <tr>
+                    {% for hd in headers %}
+                        <th style="background-color: #79aec8; height: 20px; text-align: center; font-size: 15px">{{ hd }}</th>
+                    {% endfor %}
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                    <tr>
+                        <td style="text-align: center">{{ record.id }}</td>
+                        <td style="text-align: center">{{ record.name }}</td>
+                        <td style="text-align: center">{{ record.address }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
